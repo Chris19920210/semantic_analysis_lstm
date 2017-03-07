@@ -11,12 +11,12 @@ flags =tf.app.flags
 FLAGS = flags.FLAGS
 
 
-flags.DEFINE_integer('batch_size',64,'the batch_size of the training procedure')
-flags.DEFINE_float('lr',0.01,'the learning rate')
+flags.DEFINE_integer('batch_size',32,'the batch_size of the training procedure')
+flags.DEFINE_float('lr',0.001,'the learning rate')
 flags.DEFINE_float('lr_decay',0.002,'the learning rate decay')
 flags.DEFINE_integer('vocabulary_size',20000,'vocabulary_size')
-flags.DEFINE_integer('emdedding_dim',20,'embedding dim')
-flags.DEFINE_integer('hidden_neural_size',20,'LSTM hidden neural size')
+flags.DEFINE_integer('emdedding_dim',128,'embedding dim')
+flags.DEFINE_integer('hidden_neural_size',128,'LSTM hidden neural size')
 flags.DEFINE_integer('hidden_layer_num',1,'LSTM hidden layer num')
 flags.DEFINE_string('dataset_path','data/imdb.pkl','dataset path')
 flags.DEFINE_integer('max_len',100,'max_len of training sentence')

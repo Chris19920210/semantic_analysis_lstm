@@ -113,14 +113,14 @@ class RNN_Model(object):
 
 
 
-        optimizer = tf.train.GradientDescentOptimizer(self.lr)
+        optimizer = tf.train.AdamOptimizer(self.lr)
         #optimizer.apply_gradients(zip(grads, tvars))
         self.train_op=optimizer.apply_gradients(zip(grads, tvars))
 
-        self.new_lr = tf.placeholder(tf.float32,shape=[],name="new_learning_rate")
-        self._lr_update = tf.assign(self.lr,self.new_lr)
+        # self.new_lr = tf.placeholder(tf.float32,shape=[],name="new_learning_rate")
+        # self._lr_update = tf.assign(self.lr,self.new_lr)
 
-    def assign_new_lr(self,session,lr_value):
-        session.run(self._lr_update,feed_dict={self.new_lr:lr_value})
+    # def assign_new_lr(self,session,lr_value):
+    #     session.run(self._lr_update,feed_dict={self.new_lr:lr_value})
     # def assign_new_batch_size(self,session,batch_size_value):
     #     session.run(self._batch_size_update,feed_dict={self.new_batch_size:batch_size_value})
